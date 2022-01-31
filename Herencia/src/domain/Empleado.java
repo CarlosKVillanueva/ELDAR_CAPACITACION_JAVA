@@ -6,10 +6,18 @@ public class Empleado extends Persona {
     private double sueldo;
     private static int contadorEmpleado;
 
-    public Empleado(double sueldo, String nombre, char genero, int edad, String direccion) {
-        super(nombre, genero, edad, direccion);
+    public Empleado() {
         this.idEmpleado = ++Empleado.contadorEmpleado;
+    }
+
+    public Empleado(double sueldo, String nombre, char genero, int edad, String direccion) {
+        //super(nombre, genero, edad, direccion);
+        this();
+        this.nombre = nombre;
         this.sueldo = sueldo;
+        this.genero = genero;
+        this.edad = edad;
+        this.direccion = direccion;
     }
 
     public int getIdEmpleado() {
